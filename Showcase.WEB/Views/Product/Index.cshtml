@@ -1,0 +1,36 @@
+﻿@model Product
+
+<div class="row container mt-5">
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+
+    <form method="post" asp-controller="product" asp-action="addproduct">
+            <input type="hidden" asp-for="CategoryId" value="1" />
+        <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
+            <div class="input-group row">
+                <label for="title">Başlık</label>
+                <input class="form-control" type="text" asp-for="Title" placeholder="Ürün Başlığı" id="title" />
+            </div>
+                <div class="input-group row">
+                <label for="description">Açıklama</label>
+                <input class="form-control" type="text" asp-for="Description" placeholder="Ürün Açıklaması" id="description" />
+            </div>
+                <div class="input-group row">
+                <label for="price">Fiyat</label>
+                <input class="form-control" min="0" max="999999" type="number" asp-for="Price" id="price" />
+            </div>
+                <div class="input-group ">
+                <input class="form-check" type="checkbox" asp-for="Sale"  id="sale" /> 
+                <label for="sale">İndirim Durumu</label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-outline-success">Ürün Ekle</button>
+    </form>
+
+    </div>
+</div>
+<style>
+    label{
+        font-weight:bold;
+    }
+</style>
